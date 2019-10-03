@@ -33,7 +33,7 @@ class App extends Component {
           <div>Logo</div>
           <Menu></Menu>
         </header>
-        <div>
+        <div className="seccionPrincipal">
           {viewSection(this.state.view)}
         </div>
       </div>

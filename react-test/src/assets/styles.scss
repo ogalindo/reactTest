@@ -1,7 +1,23 @@
 .informationCard {
-    display: inline;
-    height: auto;
-    margin: 10px;
-    width: auto;
+    // display: inline;
+    height: 25%;
+    // margin: 10px;
+    float: left;
+    width: 40%;
     border-style: solid;
+    background-color: red;
+    margin: auto;
+}
+
+.seccionPrincipal {
+    background-color: orange;
+    margin: auto;
+}
+
+.bodyMovie {
+    height: 200px;
+    padding: 20px;
+    border: 1px solid blue;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }

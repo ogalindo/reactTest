@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import url from '../util/Conection';
+import '../assets/styles.scss'
 
 
 
@@ -14,15 +15,15 @@ export default class Movies extends Component {
     }
 
     componentWillMount() {
-        fetch(url.UrlApi)
+        fetch(url.UrlApiMovies)
           .then(res => res.json())
           .then( data => {
-              //console.log(data);
+              console.log('data', data);
               const { results } = data;
-            //   this.state.data = data;
-            //   this.state.movies = data.results;
+            // this.state.data = data;
+            // this.state.movies = data.results;
               this.setState({ results});
-              console.log('state',this.state);
+              console.log('state', this.state);
           })
     }
 
@@ -45,13 +46,15 @@ export default class Movies extends Component {
                     </div>
                     <div id="information">
                         <div id="headerMovie">
-                            <h4>{results[index].title}</h4>
-                            <h4>{results[index].vote_average}</h4>
+                            <span>
+                                <h4>{results[index].title}</h4>
+                                <h4>{results[index].vote_average}</h4>
+                            </span>
                             <p>{results[index].original_language}</p>
                             <p>{results[index].genre_ids}</p>
                             <p>{results[index].release_date}</p>
                         </div>
-                        <div id="bodyMovie">
+                        <div id="bodyMovie" className="bodyMovie">
                         <p>{results[index].overview}</p>
                         </div>
                         <div id="footerMovie">
